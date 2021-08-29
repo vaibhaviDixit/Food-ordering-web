@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/css/all.css">
+
+</head>
+<body>
+    <div id="heading">
+        <div class="logo">
+            <div id="webname">Hungrezy</div>
+            <div id="contact">
+
+                <div class="titlebar">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>M.G Road,Ajinkya Plaza,Pune</div>
+                </div>
+
+                <div class="titlebar">
+                    <div><i class="fas fa-phone-alt"></i>     223104</div>
+                    <div><i class="fas fa-envelope-square"></i>  hungrezy@yahoo.com</div>
+
+                </div>
+                
+                <div class="titlebar" id="social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="titlebar" id="login">
+                    <a href="">login</a>
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+        <div id="navbar">
+            <ul id="row">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="res.html">Restaurants</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li ><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i>  </a> </li>
+                
+
+            </ul>
+        </div>
+
+<!-- restaurants -->
+
+ 
+ <div class="hotels">
+
+        <div class="rescard" onclick="menu(event,'laziz')">
+            <img src="img/laziz.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Laziz Pizza</h4> <p> <i class="fas fa-star"></i> 4.2</p> </div>
+                <p>Pizza, Fast Food, Burger, Desserts, Italian</p>
+            </div>
+         </div>
+
+        <div class="rescard">
+            <img src="img/shriram.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Hotel Shriram</h4> <p> <i class="fas fa-star"></i> 3.8</p> </div>
+                <p>Panner, Dal Fry, Roti, Rice</p>
+            </div>
+         </div>
+
+         <div class="rescard">
+            <img src="img/ambessador.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Ambessador</h4> <p> <i class="fas fa-star"></i> 3.7</p> </div>
+                <p>Dosa, Pav Bhaji, Idli, Kabab, Chole</p>
+            </div>
+         </div>
+
+         <div class="rescard">
+            <img src="img/salgare.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Salgare Kitchen</h4> <p> <i class="fas fa-star"></i> 3.9</p> </div>
+                <p>Vada Pav, Soup, Chowmein, Momos, Patis</p>
+            </div>
+         </div>
+
+         <div class="rescard">
+            <img src="img/jotirling.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Jotirling</h4> <p> <i class="fas fa-star"></i> 3.2</p> </div>
+                <p>Pizza, Fast Food, Burger, Desserts, Italian</p>
+            </div>
+         </div>
+
+         <div class="rescard">
+            <img src="img/bakers.jpg" alt="Avatar" >
+            <div class="container">
+                <div id="ratings"> <h4>Bakers Gallery</h4> <p> <i class="fas fa-star"></i> 3.0</p> </div>
+                <p>Pizza, Coffee, Pestries, Sandwich, Sushi</p>
+            </div>
+         </div>
+
+ </div>
+
+
+ <!-- menu of laziz -->
+
+<div class="menucard laziz"> 
+ <div >
+    <h2>Laziz Pizza</h2>
+    <h3>Menu</h3>
+
+    <div class="tab">
+          <button class="tablinks" onclick="openMenu(event, 'Recommended')" id="defaultOpen">Recommended</button>
+          <button class="tablinks" onclick="openMenu(event, 'Pizza')">Pizza</button>
+          <button class="tablinks" onclick="openMenu(event, 'Combos')">Combos</button>
+    </div>
+     
+
+ </div>
+
+<div id="Recommended" class="tabcontent">
+
+    <div class="foods">
+        <img src="img/laziz.jpg">
+        <p>Schezwan Pizza</p>
+        <p>&#8377; 225</p>
+
+        <button>Add <i class="fas fa-shopping-cart"></i></button>
+    </div>
+
+</div>
+
+<div id="Pizza" class="tabcontent">
+   pizzzza
+</div>
+
+<div id="Combos" class="tabcontent">
+ combos
+</div>
+
+</div>
+
+   <!-- footer-->
+
+   <div class="foo">
+        <p>Add your restaurant now! It's free!</p>
+        <a href="">Proceed</a>
+
+   </div>
+
+
+<script type="text/javascript">
+    
+   function menu(evt, res) {
+
+        var hotels= document.getElementsByClassName("hotels");
+          for (i = 0; i < hotels.length; i++) {
+             hotels[i].style.display = "none";
+         }
+
+         var menu=document.getElementsByClassName(res);
+          for (i = 0; i < menu.length; i++) {
+             menu[i].style.display = "block";
+         }
+   }
+   // open menu according to restaurant clicked
+   
+   function openMenu(et,name){
+
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(name).style.display = "block";
+          et.currentTarget.className += " active";
+   }
+   document.getElementById("defaultOpen").click();
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
